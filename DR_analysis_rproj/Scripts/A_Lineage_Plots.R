@@ -25,19 +25,35 @@ A2.5_node_number <- match("DominicanRepublic/SGS/20210215", tree$tip.label) # A2
 options(ignore.negative.edge=TRUE)
 text_offset = 0.00004
 # plot of full tree
-tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+% 
+# tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+% 
+#   metadata+
+#   geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+ #set metadata for color, shape, alpha, size
+#   scale_color_manual(values = region_colors)+ #change color to region colors
+#   scale_shape_manual(values=c(1, 17), labels = c("No", "Yes"))+ #set shape values
+#   scale_size_manual(values=c(2,3), guide = 'none')+ #set sizes
+#   scale_alpha_discrete(range = c(0.5, 0.95), guide = 'none')+ #set opacity values
+#   #highlight clade 1 with Dominican Republic Sample
+#   geom_hilight(node = A2.5_node_number, fill="yellow", alpha = 0.25)+
+#   geom_cladelab(node = A2.5_node_number, label = "C")+
+#   #Highlight clade 2 with Dominican Republic Sample
+#   geom_hilight(node = A2_node_number, fill="yellow", alpha = 0.25)+
+#   geom_cladelab(node = A2_node_number, label = "B")+
+#   theme(legend.position = "top")
+
+tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   metadata+
-  geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+ #set metadata for color, shape, alpha, size
-  scale_color_manual(values = region_colors)+ #change color to region colors
-  scale_shape_manual(values=c(1, 17), labels = c("No", "Yes"))+ #set shape values
-  scale_size_manual(values=c(2,3), guide = 'none')+ #set sizes
-  scale_alpha_discrete(range = c(0.5, 0.95), guide = 'none')+ #set opacity values
+  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
+  scale_alpha_discrete(range = c(0.5, 0.95))+
+  scale_fill_manual(values = region_colors)+
   #highlight clade 1 with Dominican Republic Sample
-  geom_hilight(node = 2782, fill="yellow", alpha = 0.25)+
-  geom_cladelab(node = 2782, label = "C")+
+  geom_hilight(node = A2.5_node_number, fill="yellow", alpha = 0.25)+
+  geom_cladelab(node = A2.5_node_number, label = "C", offset.text = text_offset)+
   #Highlight clade 2 with Dominican Republic Sample
-  geom_hilight(node = 2941, fill="yellow", alpha = 0.25)+
-  geom_cladelab(node = 2941, label = "B")
+  geom_hilight(node = A2_node_number, fill="yellow", alpha = 0.25)+
+  geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
+  # add legend
+  theme(legend.position = "top")
+tree_figure
 
 
 # tree subset #1 (A)
