@@ -22,6 +22,8 @@ text_label_size <- 2.75
 A2_node_number <- match("DominicanRepublic/SGS/20210216", tree$tip.label) #A2 lineage sample
 A2.5_node_number <- match("DominicanRepublic/SGS/20210215", tree$tip.label) # A2.5 lineage sample
 
+options(ignore.negative.edge=TRUE)
+text_offset = 0.00004
 # plot of full tree
 tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+% 
   metadata+
