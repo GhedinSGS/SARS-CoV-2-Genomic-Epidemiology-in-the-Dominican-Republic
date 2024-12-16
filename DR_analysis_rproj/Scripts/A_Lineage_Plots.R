@@ -53,19 +53,15 @@ tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
   # add legend
   theme(legend.position = "top")
-tree_figure
-
 
 # tree subset #1 (C)
 A2.5_subtree <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back=3)
 subtree_1 <- A2.5_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
-  geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+
-  scale_color_manual(values = region_colors)+
-  scale_shape_manual(values=c(1, 17))+
-  scale_size_manual(values=c(1,2))+
+  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
+  scale_fill_manual(values = region_colors)+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
   hexpand(.3)
   # geom_text(aes(label=node), size = 3) # use this line to get node labels
@@ -98,11 +94,9 @@ A2_subtree <- tree_subset(tree, node = getParent(tree, A2_node_number), levels_b
 subtree_2 <- A2_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
-  geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+
-  scale_color_manual(values = region_colors)+
-  scale_shape_manual(values=c(1, 17))+
-  scale_size_manual(values=c(1,2))+
+  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
+  scale_fill_manual(values = region_colors)+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
   hexpand(.3)
   # geom_text(aes(label=node), size = 3) # use this line to get node labels
