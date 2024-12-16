@@ -3,22 +3,22 @@ library(tidyverse)
 library(lubridate)
 
 # load gisaid all DR samples early pandemic from GISAID
-Caribbean_samples <- read_tsv("Data/Dominican_Republic_GISAID_Early_Pandemic_Samples.tsv")
+Caribbean_samples <- read_tsv("Data_Reanalysis/Dominican_Republic_GISAID_Early_Pandemic_Samples.tsv")
 # load all of our lab DR samples
-DR_samples <- read.csv("Data/DR_Database_With_Lineages.csv")
+DR_samples <- read.csv("Data_Reanalysis/sample_data/DR_metadata_with_lineage.csv")
 # nextclade classifications
-nextclade_classifications <- read_tsv("Data/nextclade_DR_GISAID_SGS_20230316.tsv")
+nextclade_classifications <- read_tsv("Data_Reanalysis/nextclade_DR_GISAID_SGS_20230316.tsv")
   
 # convert date to date format
 Caribbean_samples$date <- as.Date(Caribbean_samples$date, format="%Y-%m-%d")
-DR_samples$collection.date <- as.Date(DR_samples$collection.date, format="%Y-%m-%d")
+DR_samples$collection.date <- as.Date(DR_samples$collection.date, format="%m/%d/%y")
 
 #combine Study Samples and GISAID data
 AllData <- rbind(DR_samples %>% 
-                   select(collection.date, Lineage, sample) %>% 
+                   select(collection.date, pango_lineage, samplename) %>% 
                    rename(date = collection.date) %>% 
-                   rename(pangolin_lineage = Lineage) %>% 
-                   rename(strain = sample) %>% 
+                   rename(pangolin_lineage = pango_lineage) %>% 
+                   rename(strain = samplename) %>% 
                    mutate(samples = "SGS"),
                  Caribbean_samples %>% 
                    filter(grepl("*Ghedin*", authors)==FALSE) %>% 
@@ -40,6 +40,8 @@ names(clade_colors) <- c("20F", "20A", "20I (Alpha, V1)", "20B", "20D",
                          "21D (Eta)", "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
                          "21I (Delta)", "21B (Kappa)", "19A", "21G (Lambda)", "21A (Delta)")
 
+facet_labels = c('SGS' = "This Study",
+                 'GISAID' = "GISAID")
 DR_Lineages_figure <- ggplot(data = AllData %>% 
                                group_by(date, pangolin_lineage, samples, clade) %>% 
                                summarise(count = n()) %>% 
@@ -52,9 +54,8 @@ DR_Lineages_figure <- ggplot(data = AllData %>%
   xlab("Date")+
   ylab("Pangolin Lineage")+
   scale_color_manual(values = clade_colors)+
-  facet_wrap(~samples)
+  facet_wrap(~samples, labeller = as_labeller(facet_labels))+
+  guides(size=guide_legend(title="number of samples"))+
+  theme(axis.text.x = element_text(angle = 45, vjust=0.5))
 
-# remove additional datasets
-rm(AllData, Caribbean_samples, DR_samples, nextclade_classifications)
-
-
+ggsave("Figures/Caribbean_lineage_over_time_comparison_1.1.pdf", DR_Lineages_figure, height = 6, width = 8, unit = "in")
