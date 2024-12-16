@@ -53,21 +53,27 @@ subtree_1 <- tree_subset(tree, node = 2782, levels_back=0) %>%
   geom_tiplab(size=text_label_size, hjust=-0.1)+
   hexpand(.3)
 
-subtree_1_Collapsed <- subtree_1 %>% ggtree::collapse(node = 101) %>% 
-  ggtree::collapse(node = 156) %>% 
-  ggtree::collapse(node = 124) %>% 
+subtree_1_Collapsed <- subtree_1 %>% 
+  # nodes to collapse
+  ggtree::collapse(node = 166) %>% 
+  ggtree::collapse(node = 148) %>% 
+  ggtree::collapse(node = 131) %>% 
+  ggtree::collapse(node = 187) %>% 
   ggtree::collapse(node = 122) %>% 
-  ggtree::collapse(node = 141) +
-  geom_point2(aes(subset=(node==101)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 101, label="USA (23)", fontsize=text_label_size, offset = 0.000006)+
-  geom_point2(aes(subset=(node==156)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 156, label="USA (18)", fontsize=text_label_size, offset = 0.000006)+
-  geom_point2(aes(subset=(node==124)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 124, label="Panama (7)", fontsize=text_label_size, offset = 0.000006)+
-  geom_point2(aes(subset=(node==141)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 141, label="Panama (7)", fontsize=text_label_size, offset = 0.000006)+
-  geom_point2(aes(subset=(node==122)), shape=16, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
-  geom_cladelab(node = 122, label="Portugal (3)", fontsize=text_label_size, offset = 0.000006)
+  ggtree::collapse(node = 198) +
+  # reformat labels
+  geom_point2(aes(subset=(node==166)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 166, label=paste0("USA (", length(getDescendants(A2.5_subtree, 166)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==148)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 148, label=paste0("USA (", length(getDescendants(A2.5_subtree, 166)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==131)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 131, label=paste0("Panama (", length(getDescendants(A2.5_subtree, 131)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==187)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 187, label=paste0("Panama (", length(getDescendants(A2.5_subtree, 187)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==122)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 122, label=paste0("Panama (", length(getDescendants(A2.5_subtree, 122)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==198)), shape=16, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 198, label=paste0("Panama (", length(getDescendants(A2.5_subtree, 198)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)
 
 # tree subset #2 (B)
 #clade 2941
