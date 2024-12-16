@@ -101,6 +101,8 @@ subtree_layout <- cowplot::plot_grid(subtree_2_Collapsed+theme(legend.position="
                                      ncol = 1, labels = c("B", "C"), rel_heights = c(1, 1.75))
 trees_layout <- cowplot::plot_grid(tree_figure + theme(legend.position = "none"), 
                                    subtree_layout, 
-                                   nrow = 1, rel_widths = c(1,3), 
+                                   nrow = 1, rel_widths = c(1,2.5), 
                                    labels = c("A", ""))
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
+ggsave(filename = "Figures/A_lineage_1.1.svg", final_layout, height = 11, width = 8.5, units = "in")
+
