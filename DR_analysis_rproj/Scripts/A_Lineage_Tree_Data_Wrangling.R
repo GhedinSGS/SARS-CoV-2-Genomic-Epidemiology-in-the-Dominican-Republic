@@ -1,3 +1,5 @@
+# The function of this script is to format the A lineage tree output and tree for figures
+
 #load libraries
 library(tidyverse)
 library(ggtree)
@@ -5,10 +7,10 @@ library(treeio)
 library(cowplot)
 
 #load metadata
-metadata_raw <- read_tsv("Data/A_Lineage_metadata_with_nextclade_qc.tsv")
+metadata_raw <- read_tsv("Data_Reanalysis/ncov_results/A_lineage/metadata_with_nextclade_qc.tsv")
 
 #load nwk from nextstrain
-tree_raw <- read.newick("Data/A_Lineage_tree.nwk")
+tree_raw <- read.newick("Data_Reanalysis/ncov_results/A_lineage/tree.nwk")
 
 #metadata formatting
 metadata <- metadata_raw %>% 
