@@ -10,7 +10,7 @@ library(cowplot)
 metadata_raw <- read_tsv("Data_Reanalysis/ncov_results/A_lineage/metadata_with_nextclade_qc.tsv")
 
 #load nwk from nextstrain
-tree_raw <- read.newick("Data_Reanalysis/ncov_results/A_lineage/tree.nwk")
+tree_raw <- treeio::read.newick("Data_Reanalysis/ncov_results/A_lineage/tree.nwk")
 
 #metadata formatting
 metadata <- metadata_raw %>% 

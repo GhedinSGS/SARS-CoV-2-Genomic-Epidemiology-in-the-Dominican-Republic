@@ -3,6 +3,8 @@ library(tidyverse)
 library(ggtree)
 library(treeio)
 library(cowplot)
+library(phytools)
+library(tidytree)
 
 # load data
 source("Scripts/A_Lineage_Tree_Data_Wrangling.R")
