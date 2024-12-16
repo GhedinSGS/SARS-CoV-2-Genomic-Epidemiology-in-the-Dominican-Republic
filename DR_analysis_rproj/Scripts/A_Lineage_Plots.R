@@ -56,9 +56,9 @@ tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
 tree_figure
 
 
-# tree subset #1 (A)
-#clade 2783
-subtree_1 <- tree_subset(tree, node = 2782, levels_back=0) %>% 
+# tree subset #1 (C)
+A2.5_subtree <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back=3)
+subtree_1 <- A2.5_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
   geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+
@@ -68,6 +68,7 @@ subtree_1 <- tree_subset(tree, node = 2782, levels_back=0) %>%
   scale_alpha_discrete(range = c(0.5, 0.95))+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
   hexpand(.3)
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
 
 subtree_1_Collapsed <- subtree_1 %>% 
   # nodes to collapse
