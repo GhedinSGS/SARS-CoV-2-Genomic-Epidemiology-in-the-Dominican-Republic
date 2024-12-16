@@ -3,7 +3,7 @@ library(tidyverse)
 library(sf)
 
 # load DR database (with locations)
-DR_database <- read.csv("Data/DR_Database_With_Lineages.csv")
+DR_database <- read.csv("Data_Reanalysis/sample_data/DR_metadata_with_lineage.csv")
 
 # calculate number of samples per region
 DR_samples_per_region <- DR_database %>% 
@@ -16,7 +16,7 @@ DR_samples_per_region <- full_join(data.frame(region = c("Cibao Nordeste", "Ciba
                                    by = "region")
 
 # load shapefile
-DR_spdf <- sf::st_read("Data/DR_Shapefile.shp")
+DR_spdf <- sf::st_read("Data_Reanalysis/dom_admbnda_one_20210629_shp/dom_admbnda_adm1_one_20210629.shp")
   
 # change the region names (remove special characters, etc) to match metadata
 DR_spdf <- DR_spdf %>% 
@@ -50,7 +50,7 @@ DR_spdf_metadata$number_of_samples <- as.factor(DR_spdf_metadata$number_of_sampl
 
 #set colors for scale
 sample_colors <- c("#dae7f5", "#b6d2f0", "#8fb8e3", "#8fb8e3", "#8fb8e3", "#06305c")
-names(sample_colors) <- c("1", "2", "3", "4", "5", "85")
+names(sample_colors) <- c("1", "2", "3", "4", "5", "83")
 
 # set colors for the values (so scale is a little less extreme)
 map_figure <- ggplot()+
