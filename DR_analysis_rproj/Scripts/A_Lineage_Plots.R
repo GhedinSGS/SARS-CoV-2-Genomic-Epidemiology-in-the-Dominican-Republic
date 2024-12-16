@@ -90,10 +90,7 @@ subtree_2_Collapsed <- subtree_2 %>%
   geom_point2(aes(subset=(node==49)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
   geom_cladelab(node = 49, label="USA (16)", fontsize=text_label_size, offset = 0.000006)
 
-legend <- get_legend(tree_figure + 
-                       theme(legend.position = "bottom", legend.title = element_text(size = 10)) + 
-                       labs(color = "Region", shape = "From Dominican Republic")
-)
+legend = cowplot::get_plot_component(tree_figure, 'guide-box-top', return_all = TRUE)
 
 subtree_layout <- cowplot::plot_grid(subtree_2_Collapsed+theme(legend.position="none"), 
                                      subtree_1_Collapsed + theme(legend.position="none"), 
