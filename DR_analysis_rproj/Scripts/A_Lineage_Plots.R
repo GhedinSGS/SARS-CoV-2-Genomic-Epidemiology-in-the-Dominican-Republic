@@ -76,8 +76,9 @@ subtree_1_Collapsed <- subtree_1 %>%
   geom_cladelab(node = 198, label=paste0("Panama (", length(getDescendants(A2.5_subtree, 198)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)
 
 # tree subset #2 (B)
-#clade 2941
-subtree_2 <- tree_subset(tree, node = 2941, levels_back=1) %>% 
+#A.2 sample
+A2_subtree <- tree_subset(tree, node = getParent(tree, A2_node_number), levels_back=5)
+subtree_2 <- A2_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
   geom_tippoint(aes(color = region, shape=DR_yn, alpha = DR_yn, size = DR_yn))+
@@ -87,14 +88,15 @@ subtree_2 <- tree_subset(tree, node = 2941, levels_back=1) %>%
   scale_alpha_discrete(range = c(0.5, 0.95))+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
   hexpand(.3)
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
 
 subtree_2_Collapsed <- subtree_2 %>%
-  ggtree::collapse(node = 46) %>% 
-  ggtree::collapse(node = 49)+ #16 samples
-  geom_point2(aes(subset=(node==46)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 46, label="USA (4)", fontsize=text_label_size, offset = 0.000006)+
-  geom_point2(aes(subset=(node==49)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 49, label="USA (16)", fontsize=text_label_size, offset = 0.000006)
+  ggtree::collapse(node = 63) %>% 
+  ggtree::collapse(node = 59) +
+  geom_point2(aes(subset=(node==63)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 63, label=paste0("USA (", length(getDescendants(A2_subtree, 63)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)+
+  geom_point2(aes(subset=(node==59)), shape=16, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 59, label=paste0("USA (", length(getDescendants(A2_subtree, 59)), ")", sep=""), fontsize=text_label_size, offset = 0.000006)
 
 legend = cowplot::get_plot_component(tree_figure, 'guide-box-top', return_all = TRUE)
 
