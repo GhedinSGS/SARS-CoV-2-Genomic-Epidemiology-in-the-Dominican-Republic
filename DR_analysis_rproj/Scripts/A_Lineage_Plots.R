@@ -18,7 +18,9 @@ tree_branch_color <- "#5c5c5c"
 # size of text labels
 text_label_size <- 2.75
 
-options(ignore.negative.edge=TRUE)
+# get node numbers for study samples
+A2_node_number <- match("DominicanRepublic/SGS/20210216", tree$tip.label) #A2 lineage sample
+A2.5_node_number <- match("DominicanRepublic/SGS/20210215", tree$tip.label) # A2.5 lineage sample
 
 # plot of full tree
 tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+% 
