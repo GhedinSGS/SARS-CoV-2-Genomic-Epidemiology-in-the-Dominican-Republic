@@ -4,7 +4,7 @@ library(tidyverse)
 # --------- SETUP ------------
 
 #load data
-metadata_in_analysis <- read.csv("Data/DR_Database_With_Lineages.csv")
+metadata_in_analysis <- read.csv("Data_Reanalysis/sample_data/DR_metadata_with_lineage.csv")
 
 num_samples_in_analysis <- nrow(metadata_in_analysis)
 
@@ -65,12 +65,12 @@ for (i in 1:length(c("Asymptomatic", "Symptomatic"))){
   
   # statistics by lineage
   metadata_lineage <- data_temp %>% 
-    group_by(Lineage) %>% 
+    group_by(pango_lineage) %>% 
     summarise(count = n()) %>% 
     mutate(percent = count / num_samples_in_analysis * 100) %>% 
     mutate(percent = format(round(percent, 2))) %>% 
     mutate(table_format = paste(count, " (", percent, ")", sep="")) %>% 
-    rename(variable = Lineage) %>% 
+    rename(variable = pango_lineage) %>% 
     mutate(symptoms = current_symp)
   metadata_lineage$count <- as.numeric(metadata_lineage$count)
   metadata_lineage$percent <- as.numeric(metadata_lineage$percent)
@@ -112,7 +112,7 @@ table_statistics_2 <- table_statistics %>%
                             variable %in% c("M", "F") ~ "Sex",
                             variable %in% c("Asymptomatic", "Symptomatic") ~ "Symptoms",
                             variable %in% c(unique(metadata_in_analysis$region)) ~ "Region",
-                            variable %in% c(unique(metadata_in_analysis$Lineage)) ~ "Lineage",
+                            variable %in% c(unique(metadata_in_analysis$pango_lineage)) ~ "Lineage",
     TRUE ~ "X"
   ))) %>% 
   arrange(category) %>% 
@@ -121,3 +121,4 @@ table_statistics_2 <- table_statistics %>%
                               TRUE ~ variable)) %>% 
   replace(is.na(.), "0")
 
+write.csv(table_statistics_2, "Figures/patient_characteristics_table.csv", row.names = FALSE)
