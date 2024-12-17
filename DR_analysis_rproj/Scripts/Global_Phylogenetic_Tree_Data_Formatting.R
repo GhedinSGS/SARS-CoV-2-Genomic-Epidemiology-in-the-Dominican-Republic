@@ -17,9 +17,9 @@ library(ape)
 
 # load data
 # tree
-tree <- read.newick("Data/Global_Phylogenetic_Tree.nwkk")
+tree <- read.newick("Data_Reanalysis/ncov_results/global_tree/tree.nwk")
 # metadata
-metadata_raw <- read_tsv("Data/Global_Phylogenetic_Tree_metadata_with_nextclade_qc.tsv")
+metadata_raw <- read.csv("Data_Reanalysis/sample_data/DR_metadata_with_lineage.csv")
 
 #samples in tree
 samples_in_tree <- tree$tip.label
