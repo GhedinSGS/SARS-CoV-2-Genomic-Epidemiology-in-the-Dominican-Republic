@@ -38,10 +38,6 @@ metadata <- metadata_raw %>%
 # rename tree
 tree_renamed <- rename_taxa(tree = tree, data = metadata, key = strain, value = strain_renamed)
 
-#drop 3 samples that were repeated under different names
-samples_to_drop <- c("DominicanRepublic/20201116/EPIISL9670835", "DominicanRepublic/20201116/EPIISL9670837", "DominicanRepublic/20210215/EPIISL9671868")
-tree_renamed <- drop.tip(tree_renamed, samples_to_drop)
-
 # remove old strain name from metadata
 metadata <- metadata %>% 
   #remove old strain name
