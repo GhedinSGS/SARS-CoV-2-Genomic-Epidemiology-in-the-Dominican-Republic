@@ -3,7 +3,7 @@
 # 
 # Author: Allie Kreitman
 # Script made: 2023-03-29
-# Script last updated: 2023-02-29
+# Script last updated: 2024-12-17
 ### -----
 
 #load libraries
@@ -54,12 +54,16 @@ tree_figure <- ggtree(tree, color = tree_branch_colors, size = 0.1) %<+%
   metadata+
   geom_tippoint(aes(fill=Nextstrain_clade, alpha = GL_yn, stroke = GL_yn_numeric), shape=21, size=4)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
-  scale_fill_manual(values = clade_colors)
+  scale_fill_manual(values = clade_colors)+
+  guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE))+
+  theme(legend.position = "bottom")
 
 # --------------- LEGEND ------------
-legend <- get_legend(tree_figure + 
-                       theme(legend.position = "bottom")+
-                       guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE)))
+# legend <- get_legend(tree_figure + 
+#                        theme(legend.position = "bottom")+
+#                        guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE)))
+
+legend = cowplot::get_plot_component(tree_figure, 'guide-box-bottom', return_all = TRUE)
 
 # -------------- make plot together ---------------
 plot_layout <- plot_grid(bargraph_figure + theme(legend.position = "none"), 
@@ -73,4 +77,4 @@ plot_layout <- plot_grid(plot_layout,
                          rel_widths = c(2,3),
                          labels = c("A", "B"))
 
-
+ggsave("Figures/global_tree_layout_1.1.svg", plot_layout, height = 8.5, width = 11, unit = "in")
