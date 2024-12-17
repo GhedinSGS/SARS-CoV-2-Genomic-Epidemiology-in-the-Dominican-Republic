@@ -47,10 +47,10 @@ bargraph_figure <- ggplot(data = metadata %>%
 # --------- PLOT TREE --------------------- 
 metadata <- metadata %>% 
   mutate(GL_yn_numeric = ifelse(GL_yn == "y", 1, 0)) %>% 
-  mutate(sample_in_tree = ifelse(strain %in% tree_renamed$tip.label, "y", "n"))
+  mutate(sample_in_tree = ifelse(strain %in% tree$tip.label, "y", "n"))
 metadata$GL_yn_numeric <- as.numeric(metadata$GL_yn_numeric)
  
-tree_figure <- ggtree(tree_renamed, color = tree_branch_colors, size = 0.1) %<+% 
+tree_figure <- ggtree(tree, color = tree_branch_colors, size = 0.1) %<+% 
   metadata+
   geom_tippoint(aes(fill=Nextstrain_clade, alpha = GL_yn, stroke = GL_yn_numeric), shape=21, size=4)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
