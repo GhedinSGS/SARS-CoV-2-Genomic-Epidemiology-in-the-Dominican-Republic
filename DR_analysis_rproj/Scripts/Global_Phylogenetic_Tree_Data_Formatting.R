@@ -27,11 +27,11 @@ samples_in_tree <- tree$tip.label
 #format metadata
 metadata <- metadata_raw %>% 
   # remove samples filtered out
-  filter(strain %in% samples_in_tree) %>% 
+  filter(samplename %in% samples_in_tree) %>% 
   #select relevant strains
-  select(strain, date, region, country, gisaid_epi_isl, Nextstrain_clade, Nextclade_pango) %>% 
+  select(samplename, date, region, country, gisaid_epi_isl, Nextstrain_clade, Nextclade_pango) %>% 
   #change samples for this study gisaid_epi_isl number to say "SGS"
-  mutate(gisaid_epi_isl = ifelse(is.na(gisaid_epi_isl)==TRUE, strain, gisaid_epi_isl)) %>% 
+  mutate(gisaid_epi_isl = ifelse(is.na(gisaid_epi_isl)==TRUE, samplename, gisaid_epi_isl)) %>% 
   # add strain rename column
   mutate(strain_renamed = paste0(gsub(" ", "", country), "/", gsub("-", "", date), "/", gsub("_", "", gisaid_epi_isl)))
 
