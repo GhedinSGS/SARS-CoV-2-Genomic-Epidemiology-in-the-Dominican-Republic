@@ -27,12 +27,19 @@ samples_in_tree <- tree$tip.label
 #format metadata
 metadata <- metadata_raw %>% 
   # remove samples filtered out
-  filter(strain %in% samples_in_tree) %>% 
+  filter(strain %in% samples_in_tree) %>%
+  # rename strain
+  mutate(strain_renamed = ifelse(grepl("^DR[0-9]{4}$", strain) == T, paste0("DominicanRepublic_", strain), strain)) %>% 
   #select relevant strains
-  select(strain, date, region, country, Nextstrain_clade, Nextclade_pango) 
+  select(strain, date, region, country, Nextstrain_clade, Nextclade_pango, strain_renamed) 
+
+# rename tree
+tree <- rename_taxa(tree = tree, data = metadata, key = strain, value = strain_renamed)
 
 metadata <- metadata %>% 
-  mutate(GL_yn = ifelse(grepl("^DR[0-9]{4}$", strain) == T, "y", "n"))
+  mutate(GL_yn = ifelse(grepl("^DR[0-9]{4}$", strain) == T, "y", "n")) %>% 
+  select(-strain) %>% 
+  rename(strain = strain_renamed)
 
 #clean workspace
 rm(metadata_raw, samples_in_tree)
