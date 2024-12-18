@@ -104,5 +104,5 @@ trees_layout <- cowplot::plot_grid(tree_figure + theme(legend.position = "none")
                                    nrow = 1, rel_widths = c(1,2.5), 
                                    labels = c("A", ""))
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
-ggsave(filename = "Figures/A_lineage_1.1.svg", final_layout, height = 11, width = 8.5, units = "in")
+ggsave(filename = "Figures/A_lineage.svg", final_layout, height = 8.5, width = 13, units = "in")
 
