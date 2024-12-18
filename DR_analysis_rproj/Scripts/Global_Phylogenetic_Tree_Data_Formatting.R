@@ -17,9 +17,35 @@ library(ape)
 
 # load data
 # tree
-tree <- read.newick("Data_Reanalysis/ncov_results/global_tree/tree.nwk")
+tree <- treeio::read.newick("Data_Reanalysis/ncov_results/global_tree/tree.nwk")
 # metadata
 metadata_raw <- read_tsv("Data_Reanalysis/ncov_results/global_tree/metadata_with_nextclade_qc.tsv")
+
+# caribbean countries
+caribbean_countries <- c(
+  # Independent Nations
+  "Antigua and Barbuda", "The Bahamas", "Barbados", "Cuba", "Dominica", 
+  "Dominican Republic", "Grenada", "Haiti", "Jamaica", 
+  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", 
+  "Trinidad and Tobago",
+  
+  # British Overseas Territories
+  "Anguilla", "Bermuda", "British Virgin Islands", "Cayman Islands", 
+  "Montserrat", "Turks and Caicos Islands",
+  
+  # French Overseas Territories
+  "Guadeloupe", "Martinique", "Saint Barthélemy", "Saint Martin",
+  
+  # Dutch Territories
+  "Aruba", "Curaçao", "Sint Maarten", "Bonaire", 
+  "Saba", "Sint Eustatius","Curacao",
+  
+  # U.S. Territories
+  "Puerto Rico", "U.S. Virgin Islands", 
+  
+  # central america
+  "Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panama"
+)
 
 #samples in tree
 samples_in_tree <- tree$tip.label
@@ -38,8 +64,16 @@ tree <- rename_taxa(tree = tree, data = metadata, key = strain, value = strain_r
 
 metadata <- metadata %>% 
   mutate(GL_yn = ifelse(grepl("^DR[0-9]{4}$", strain) == T, "y", "n")) %>% 
+  # make DR_yn
+  mutate(DR_yn = ifelse(country == "Dominican Republic", "y", "n")) %>% 
+  mutate(DR_yn_numeric = ifelse(DR_yn == "y", 1, 0)) %>% 
   select(-strain) %>% 
-  rename(strain = strain_renamed)
+  rename(strain = strain_renamed) %>% 
+  # make dominican republic its own region
+  mutate(region = ifelse(country %in% caribbean_countries, "Caribbean", region))
+
+#fully align names - not sure why this is necessary but it is buggy without! 
+metadata <- left_join(data.frame(strain = tree$tip.label), metadata, by="strain")
 
 #clean workspace
 rm(metadata_raw, samples_in_tree)
