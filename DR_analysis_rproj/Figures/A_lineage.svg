@@ -10675,6 +10675,8 @@
 <circle cx='228.16' cy='519.42' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='226.13' cy='519.22' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='235.24' cy='519.02' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
+<circle cx='246.87' cy='518.81' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
+<circle cx='245.36' cy='518.61' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='219.05' cy='517.39' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='219.05' cy='517.19' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='244.85' cy='516.38' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
@@ -10742,6 +10744,7 @@
 <circle cx='242.06' cy='498.93' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='226.88' cy='498.73' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='234.97' cy='495.69' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
+<circle cx='246.61' cy='495.48' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='224.35' cy='494.47' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='225.36' cy='494.27' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='222.33' cy='494.06' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
@@ -10958,9 +10961,6 @@
 <circle cx='241.31' cy='366.27' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='236.25' cy='366.07' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='246.09' cy='171.94' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
-<circle cx='246.87' cy='518.81' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
-<circle cx='245.36' cy='518.61' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
-<circle cx='246.61' cy='495.48' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
 <circle cx='234.47' cy='495.28' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
 <circle cx='234.73' cy='455.52' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
 <circle cx='221.08' cy='547.62' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #4DA890; fill-opacity: 0.50;' />
@@ -12997,6 +12997,7 @@
 <line x1='402.33' y1='217.96' x2='402.33' y2='223.61' style='stroke-width: 0.21; stroke: #BEBEBE;' />
 <line x1='402.33' y1='217.96' x2='402.33' y2='212.31' style='stroke-width: 0.21; stroke: #BEBEBE;' />
 <circle cx='612.48' cy='543.63' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
+<circle cx='729.59' cy='536.10' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='561.56' cy='475.86' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='480.09' cy='468.33' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='688.86' cy='445.74' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
@@ -13017,7 +13018,6 @@
 <circle cx='500.44' cy='265.02' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='495.35' cy='234.90' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
 <circle cx='653.20' cy='227.37' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #D61E6E; fill-opacity: 0.50;' />
-<circle cx='729.59' cy='536.10' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
 <circle cx='607.39' cy='528.57' r='3.91' style='stroke-width: 1.42; stroke: #000000; stroke-opacity: 0.95; fill: #D61E6E; fill-opacity: 0.95;' />
 <circle cx='648.12' cy='362.91' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #4DA890; fill-opacity: 0.50;' />
 <circle cx='408.79' cy='257.49' r='3.20' style='stroke-width: 0.00; stroke: #000000; stroke-opacity: 0.50; fill: #4DA890; fill-opacity: 0.50;' />
@@ -13095,36 +13095,36 @@
 </g>
 <g clip-path='url(#cpMC4wMHw5MzYuMDB8MC4wMHw2MTIuMDA=)'>
 <text x='272.48' y='217.42' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='10.11px' lengthAdjust='spacingAndGlyphs'>C</text>
-<rect x='239.07' y='558.68' width='336.35' height='51.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<text x='244.55' y='588.13' style='font-size: 11.00px; font-family: "Arial";' textLength='30.59px' lengthAdjust='spacingAndGlyphs'>region</text>
-<rect x='280.60' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='289.24' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #F0E442;' />
-<rect x='280.60' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='289.24' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #B2A3BF;' />
-<rect x='331.97' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='340.61' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #D61E6E;' />
-<rect x='331.97' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='340.61' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #4DA890;' />
-<rect x='401.78' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='410.42' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #D49E26;' />
-<rect x='401.78' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='410.42' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #0072B2;' />
-<rect x='488.02' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='496.66' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #85C2E6;' />
-<text x='303.36' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='22.49px' lengthAdjust='spacingAndGlyphs'>Africa</text>
-<text x='303.36' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='17.11px' lengthAdjust='spacingAndGlyphs'>Asia</text>
-<text x='354.73' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='40.61px' lengthAdjust='spacingAndGlyphs'>Caribbean</text>
-<text x='354.73' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='28.38px' lengthAdjust='spacingAndGlyphs'>Europe</text>
-<text x='424.54' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='56.22px' lengthAdjust='spacingAndGlyphs'>North America</text>
-<text x='424.54' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='32.77px' lengthAdjust='spacingAndGlyphs'>Oceania</text>
-<text x='510.78' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='57.71px' lengthAdjust='spacingAndGlyphs'>South America</text>
-<rect x='586.37' y='558.68' width='110.56' height='28.24' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
-<text x='591.85' y='576.75' style='font-size: 11.00px; font-family: "Arial";' textLength='33.62px' lengthAdjust='spacingAndGlyphs'>DR_yn</text>
-<rect x='630.95' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='639.59' cy='572.80' r='3.56' style='stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.50;' />
-<rect x='664.19' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
-<circle cx='672.83' cy='572.80' r='3.56' style='stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.95;' />
-<text x='653.71' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='4.90px' lengthAdjust='spacingAndGlyphs'>n</text>
-<text x='686.95' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='4.40px' lengthAdjust='spacingAndGlyphs'>y</text>
+<rect x='239.67' y='558.68' width='336.35' height='51.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<text x='245.15' y='588.13' style='font-size: 11.00px; font-family: "Arial";' textLength='30.59px' lengthAdjust='spacingAndGlyphs'>region</text>
+<rect x='281.20' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='289.84' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #F0E442;' />
+<rect x='281.20' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='289.84' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #B2A3BF;' />
+<rect x='332.58' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='341.22' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #D61E6E;' />
+<rect x='332.58' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='341.22' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #4DA890;' />
+<rect x='402.38' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='411.02' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #D49E26;' />
+<rect x='402.38' y='586.92' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='411.02' cy='595.56' r='3.56' style='stroke-width: 0.71; fill: #0072B2;' />
+<rect x='488.62' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='497.26' cy='572.80' r='3.56' style='stroke-width: 0.71; fill: #85C2E6;' />
+<text x='303.96' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='22.49px' lengthAdjust='spacingAndGlyphs'>Africa</text>
+<text x='303.96' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='17.11px' lengthAdjust='spacingAndGlyphs'>Asia</text>
+<text x='355.34' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='40.61px' lengthAdjust='spacingAndGlyphs'>Caribbean</text>
+<text x='355.34' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='28.38px' lengthAdjust='spacingAndGlyphs'>Europe</text>
+<text x='425.14' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='56.22px' lengthAdjust='spacingAndGlyphs'>North America</text>
+<text x='425.14' y='598.72' style='font-size: 8.80px; font-family: "Arial";' textLength='32.77px' lengthAdjust='spacingAndGlyphs'>Oceania</text>
+<text x='511.38' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='57.71px' lengthAdjust='spacingAndGlyphs'>South America</text>
+<rect x='586.98' y='558.68' width='109.35' height='28.24' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<text x='592.46' y='576.75' style='font-size: 11.00px; font-family: "Arial";' textLength='32.41px' lengthAdjust='spacingAndGlyphs'>GL_yn</text>
+<rect x='630.34' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='638.98' cy='572.80' r='3.56' style='stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.50;' />
+<rect x='663.59' y='564.16' width='17.28' height='17.28' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='672.23' cy='572.80' r='3.56' style='stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.95;' />
+<text x='653.10' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='4.90px' lengthAdjust='spacingAndGlyphs'>n</text>
+<text x='686.35' y='575.96' style='font-size: 8.80px; font-family: "Arial";' textLength='4.40px' lengthAdjust='spacingAndGlyphs'>y</text>
 </g>
 </svg>

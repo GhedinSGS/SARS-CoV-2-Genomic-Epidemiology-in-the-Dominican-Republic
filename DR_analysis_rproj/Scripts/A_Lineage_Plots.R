@@ -27,7 +27,7 @@ text_offset = 0.00004
 # plot of full tree
 tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   metadata+
-  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
+  geom_tippoint(aes(fill = region, alpha = GL_yn, stroke = GL_yn_numeric), shape = 21, size=3)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
   scale_fill_manual(values = region_colors)+
   #highlight clade 1 with Dominican Republic Sample
@@ -44,7 +44,7 @@ A2.5_subtree <- tree_subset(tree, node = getParent(tree, A2.5_node_number), leve
 subtree_1 <- A2.5_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
-  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
+  geom_tippoint(aes(fill = region, alpha = GL_yn, stroke = GL_yn_numeric), shape = 21, size=3)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
   scale_fill_manual(values = region_colors)+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
@@ -79,7 +79,7 @@ A2_subtree <- tree_subset(tree, node = getParent(tree, A2_node_number), levels_b
 subtree_2 <- A2_subtree %>% 
   ggtree(color = "grey", size = 0.1) %<+% 
   metadata+
-  geom_tippoint(aes(fill = region, alpha = DR_yn, stroke = DR_yn_numeric), shape = 21, size=3)+
+  geom_tippoint(aes(fill = region, alpha = GL_yn, stroke = GL_yn_numeric), shape = 21, size=3)+
   scale_alpha_discrete(range = c(0.5, 0.95))+
   scale_fill_manual(values = region_colors)+
   geom_tiplab(size=text_label_size, hjust=-0.1)+
