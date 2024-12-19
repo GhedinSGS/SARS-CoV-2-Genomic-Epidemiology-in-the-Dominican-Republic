@@ -20,7 +20,9 @@ metadata <- metadata_raw %>%
   mutate(strain_renamed = paste0(gsub(" ", "", country), sep="/", gisaid_epi_isl, sep="/", gsub("-", "", date)), .after=strain) %>% 
   mutate(DR_yn = ifelse(country == "Dominican Republic", "y", "n")) %>% 
   mutate(DR_yn_numeric = ifelse(DR_yn == "y", 1, 0)) %>% 
-  select(strain, strain_renamed, date, region, country, division, gisaid_epi_isl, Nextstrain_clade, pango_lineage, DR_yn, DR_yn_numeric)
+  mutate(GL_yn = ifelse(grepl("^DR[0-9]{4}$", strain) == T, "y", "n")) %>% 
+  mutate(GL_yn_numeric = ifelse(GL_yn == "y", 1, 0)) %>% 
+  select(strain, strain_renamed, date, region, country, division, gisaid_epi_isl, Nextstrain_clade, pango_lineage, DR_yn, DR_yn_numeric, GL_yn ,GL_yn_numeric)
 
 #rename tree
 tree <- rename_taxa(tree = tree_raw, data = metadata, key = strain, value = strain_renamed)
