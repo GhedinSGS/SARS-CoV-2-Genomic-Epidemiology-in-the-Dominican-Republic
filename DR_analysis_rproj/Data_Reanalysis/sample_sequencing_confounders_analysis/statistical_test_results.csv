@@ -1,0 +1,9 @@
+"var","test","p"
+"patient.locality","chi_squared",0.870089991487422
+"region","chi_squared",0.440609894959889
+"sample.type","chi_squared",0.953866822123236
+"symptoms","chi_squared",0.529271575936756
+"sex","chi_squared",0.794333903326287
+"age_years","t.test",0.387309063420005
+"ct","t.test",1.64652610193244e-14
+"collection.date","linear_regression",0.088105735257876
