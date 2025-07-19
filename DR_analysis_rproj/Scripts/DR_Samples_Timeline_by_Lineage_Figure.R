@@ -31,14 +31,25 @@ AllData$date <- as.Date(AllData$date)
 AllData <- left_join(AllData, nextclade_classifications %>% rename(strain = seqName), by = "strain")
 
 #color palette
-clade_colors <- c("#771155","#5c5c5c", "#AA4488", "#CC99BB", "#114477", 
-                  "#4477AA", "#77AADD", "#117777", "#44AAAA", "#77CCCC", 
-                  "#117744", "#44AA77", "#88CCAA", "#777711", "#AAAA44", 
-                  "#DDDD77", "#774411", "#AA7744", "#DDAA77", "#771122")
-names(clade_colors) <- c("20F", "20A", "20I (Alpha, V1)", "20B", "20D", 
-                         "20G", "20C", "20E (EU1)", "21J (Delta)", "20H (Beta, V2)",
-                         "21D (Eta)", "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
-                         "21I (Delta)", "21B (Kappa)", "19A", "21G (Lambda)", "21A (Delta)")
+# clade_colors <- c("#771155","#5c5c5c", "#AA4488", "#CC99BB", "#114477",
+#                   "#4477AA", "#77AADD", "#117777", "#44AAAA", "#77CCCC", 
+#                   "#117744", "#44AA77", "#88CCAA", "#777711", "#AAAA44", 
+#                   "#DDDD77", "#774411", "#AA7744", "#DDAA77", "#771122")
+
+clade_colors <- c("#0050dc", "#00b31d",  "#eed41f", "#ff7a00",  "#ea229d", 
+                  "#464746",  "#eb2f16", "#45b0cf",  "#8413b6", "#9aa65a",  
+                  "#d48bd3", "#e1a17b",  "#895437", "white", "white", "white", "white", "white", "white", "white") 
+
+names(clade_colors) <- c("20A", "20I (Alpha, V1)", "20B", 
+                         "20G", "20C", "20E (EU1)", "21J (Delta)",
+                         "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
+                         "19A", "21A (Delta)", 
+                         "20F", "21I (Delta)","20D", "21D (Eta)", "20H (Beta, V2)", "21B (Kappa)", "21G (Lambda)")
+  
+# names(clade_colors) <- c("20F", "20A", "20I (Alpha, V1)", "20B", "20D", 
+#                          "20G", "20C", "20E (EU1)", "21J (Delta)", "20H (Beta, V2)",
+#                          "21D (Eta)", "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
+#                          "21I (Delta)", "21B (Kappa)", "19A", "21G (Lambda)", "21A (Delta)")
 
 facet_labels = c('SGS' = "This Study",
                  'GISAID' = "GISAID")
@@ -57,5 +68,5 @@ DR_Lineages_figure <- ggplot(data = AllData %>%
   facet_wrap(~samples, labeller = as_labeller(facet_labels))+
   guides(size=guide_legend(title="number of samples"))+
   theme(axis.text.x = element_text(angle = 45, vjust=0.5))
-
-ggsave("Figures/Caribbean_lineage_over_time_comparison_1.1.pdf", DR_Lineages_figure, height = 6, width = 8, unit = "in")
+DR_Lineages_figure
+ggsave("Figures/Caribbean_lineage_over_time_comparison_2.1.pdf", DR_Lineages_figure, height = 6, width = 8, unit = "in")
