@@ -38,6 +38,7 @@ tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
   # add legend
   theme(legend.position = "top")
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
 
 # larger clade holding both A samples from this study
 sample_clade <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back = 10)
@@ -174,7 +175,45 @@ trees_layout <- cowplot::plot_grid(tree_figure_clade_collapsed + theme(legend.po
                                    subtree_layout, 
                                    nrow = 1, rel_widths = c(1,2.5), 
                                    labels = c("A", ""))
+
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
 final_layout
-ggsave(filename = "Figures/A_lineage.svg", final_layout, height = 8.5, width = 13, units = "in")
+ggsave(filename = "Figures/A_lineage_v2.svg", final_layout, height = 8.5, width = 13, units = "in")
+
+# try to make a piechart version of the tree: 
+# 
+# library(ggtree)
+# library(reshape2)
+# library(ggplot2)
+# 
+# tr <- tree
+# p <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
+#   metadata +
+#   geom_tippoint(aes(fill = region), shape = 21, size = 3) +
+#   scale_fill_manual(values = region_colors)
+# 
+# # Nodes to collapse
+# collapse_nodes <- c(4170, 3523, 2690, 2679)
+# 
+# # Collapse those nodes
+# for (n in collapse_nodes) {
+#   p <- collapse(p, node = n)
+# }
+# 
+# ## create list to hold all pie charts
+# pies = list()
+# for (i in 1:collapse_nodes) {
+#   curr_dat = metadata %>% 
+#     filter(strain %in% getDescendants(tree, collapse_nodes[i]))
+#   ## create a ggplot object for each pie chart
+#   pies[[i]] =  ggplot(curr_dat, aes(y = value, fill = variable, x="")) + 
+#     geom_bar(stat = "identity") +
+#     coord_polar("y", start=0) +
+#     theme_void() + scale_fill_brewer(palette = "Set1", guide = F)
+# }
+# # give them the appropriate names and plot on tree
+# names(pies) = 1:15
+# inset(p, pies, width=0.1, height=0.1, hjust=0)
+# ##########
+
 
