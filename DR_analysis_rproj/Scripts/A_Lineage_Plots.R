@@ -23,7 +23,7 @@ A2_node_number <- match("DominicanRepublic/SGS/20210216", tree$tip.label) #A2 li
 A2.5_node_number <- match("DominicanRepublic/SGS/20210215", tree$tip.label) # A2.5 lineage sample
 
 options(ignore.negative.edge=TRUE)
-text_offset = 0.00004
+text_offset = 0.00001
 # plot of full tree
 tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   metadata+
@@ -38,6 +38,77 @@ tree_figure <- ggtree(tree, color = tree_branch_color, size = 0.1) %<+%
   geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
   # add legend
   theme(legend.position = "top")
+
+# larger clade holding both A samples from this study
+sample_clade <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back = 10)
+tree_figure_clade <- sample_clade %>% 
+  ggtree(color = tree_branch_color, size = 0.1) %<+%
+    metadata+
+    geom_tippoint(aes(fill = region, alpha = GL_yn, stroke = GL_yn_numeric), shape = 21, size=3)+
+    scale_alpha_discrete(range = c(0.5, 0.95))+
+    scale_fill_manual(values = region_colors)+
+    #highlight clade 1 with Dominican Republic Sample
+    #geom_hilight(node = A2.5_node_number, fill="yellow", alpha = 0.25)+
+    geom_cladelab(node = A2.5_node_number, label = "C", offset.text = text_offset)+
+    #Highlight clade 2 with Dominican Republic Sample
+    #geom_hilight(node = A2_node_number, fill="yellow", alpha = 0.25)+
+    geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
+    # add legend
+    theme(legend.position = "top")
+    # geom_text(aes(label=node), size = 3) # use this line to get node labels
+tree_figure_clade
+
+label_offset = 0.000003
+tree_figure_clade_collapsed <- tree_figure_clade %>%
+  ggtree::collapse(node = 1543) %>% 
+  ggtree::collapse(node = 962) %>% 
+  ggtree::collapse(node = 953) %>% 
+  ggtree::collapse(node = 1500) %>% 
+  ggtree::collapse(node = 1402) %>% 
+  ggtree::collapse(node = 929) %>% 
+  ggtree::collapse(node = 1518) %>% 
+  ggtree::collapse(node = 1544) %>% 
+  ggtree::collapse(node = 1320) %>% 
+  ggtree::collapse(node = 1393) %>% 
+  ggtree::collapse(node = 1061) %>% 
+  ggtree::collapse(node = 941) %>% 
+  ggtree::collapse(node = 1308) %>%
+  ggtree::collapse(node = 1665) +
+  # reformat labels
+  geom_point2(aes(subset=(node==1543)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 1543, label=paste0("North America (", length(getDescendants(sample_clade, 1543)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1544)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 1544, label=paste0("North America (", length(getDescendants(sample_clade, 1544)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==962)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 962, label=paste0("Caribbean (", length(getDescendants(sample_clade, 962)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==953)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 953, label=paste0("Caribbean (", length(getDescendants(sample_clade, 953)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1665)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 1665, label=paste0("North America (", length(getDescendants(sample_clade, 1665)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1402)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
+  geom_cladelab(node = 1402, label=paste0("Europe (", length(getDescendants(sample_clade, 1402)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1518)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
+  geom_cladelab(node = 1518, label=paste0("Europe (", length(getDescendants(sample_clade, 1518)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1500)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
+  geom_cladelab(node = 1500, label=paste0("Europe (", length(getDescendants(sample_clade, 1500)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==929)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 929, label=paste0("Caribbean (", length(getDescendants(sample_clade, 929)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1320)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 1320, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1320)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1393)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 1393, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1393)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1061)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
+  geom_cladelab(node = 1061, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1061)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==941)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 941, label=paste0("North America (", length(getDescendants(sample_clade, 941)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_point2(aes(subset=(node==1308)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
+  geom_cladelab(node = 1308, label=paste0("North America (", length(getDescendants(sample_clade, 1308)), ")", sep=""), fontsize=text_label_size, offset = label_offset)
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
+tree_figure_clade_collapsed
+# collapse clades
+
+
+tree_figure_clade
 
 # tree subset #1 (C)
 A2.5_subtree <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back=3)
@@ -99,10 +170,11 @@ legend = cowplot::get_plot_component(tree_figure, 'guide-box-top', return_all = 
 subtree_layout <- cowplot::plot_grid(subtree_2_Collapsed+theme(legend.position="none"), 
                                      subtree_1_Collapsed + theme(legend.position="none"), 
                                      ncol = 1, labels = c("B", "C"), rel_heights = c(1, 1.75))
-trees_layout <- cowplot::plot_grid(tree_figure + theme(legend.position = "none"), 
+trees_layout <- cowplot::plot_grid(tree_figure_clade_collapsed + theme(legend.position = "none"), 
                                    subtree_layout, 
                                    nrow = 1, rel_widths = c(1,2.5), 
                                    labels = c("A", ""))
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
+final_layout
 ggsave(filename = "Figures/A_lineage.svg", final_layout, height = 8.5, width = 13, units = "in")
 
