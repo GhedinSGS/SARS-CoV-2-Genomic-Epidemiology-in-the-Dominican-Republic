@@ -76,33 +76,33 @@ tree_figure_clade_collapsed <- tree_figure_clade %>%
   ggtree::collapse(node = 1665) +
   # reformat labels
   geom_point2(aes(subset=(node==1543)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 1543, label=paste0("North America (", length(getDescendants(sample_clade, 1543)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1543, label=paste0("(", length(getDescendants(sample_clade, 1543)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1544)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 1544, label=paste0("North America (", length(getDescendants(sample_clade, 1544)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1544, label=paste0("(", length(getDescendants(sample_clade, 1544)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==962)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 962, label=paste0("Caribbean (", length(getDescendants(sample_clade, 962)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 962, label=paste0("(", length(getDescendants(sample_clade, 962)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==953)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 953, label=paste0("Caribbean (", length(getDescendants(sample_clade, 953)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 953, label=paste0("(", length(getDescendants(sample_clade, 953)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1665)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 1665, label=paste0("North America (", length(getDescendants(sample_clade, 1665)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1665, label=paste0("(", length(getDescendants(sample_clade, 1665)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1402)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
-  geom_cladelab(node = 1402, label=paste0("Europe (", length(getDescendants(sample_clade, 1402)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1402, label=paste0("(", length(getDescendants(sample_clade, 1402)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1518)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
-  geom_cladelab(node = 1518, label=paste0("Europe (", length(getDescendants(sample_clade, 1518)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1518, label=paste0("(", length(getDescendants(sample_clade, 1518)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1500)), shape=17, size=2, alpha = 0.5, color=region_colors[["Europe"]])+
-  geom_cladelab(node = 1500, label=paste0("Europe (", length(getDescendants(sample_clade, 1500)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1500, label=paste0("(", length(getDescendants(sample_clade, 1500)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==929)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 929, label=paste0("Caribbean (", length(getDescendants(sample_clade, 929)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 929, label=paste0("(", length(getDescendants(sample_clade, 929)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1320)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 1320, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1320)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1320, label=paste0("(", length(getDescendants(sample_clade, 1320)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1393)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 1393, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1393)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1393, label=paste0("(", length(getDescendants(sample_clade, 1393)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1061)), shape=17, size=2, alpha = 0.5, color=region_colors[["Caribbean"]])+
-  geom_cladelab(node = 1061, label=paste0("Caribbean (", length(getDescendants(sample_clade, 1061)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 1061, label=paste0("(", length(getDescendants(sample_clade, 1061)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==941)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 941, label=paste0("North America (", length(getDescendants(sample_clade, 941)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
+  geom_cladelab(node = 941, label=paste0("(", length(getDescendants(sample_clade, 941)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
   geom_point2(aes(subset=(node==1308)), shape=17, size=2, alpha = 0.5, color=region_colors[["North America"]])+
-  geom_cladelab(node = 1308, label=paste0("North America (", length(getDescendants(sample_clade, 1308)), ")", sep=""), fontsize=text_label_size, offset = label_offset)
+  geom_cladelab(node = 1308, label=paste0("(", length(getDescendants(sample_clade, 1308)), ")", sep=""), fontsize=text_label_size, offset = label_offset)
   # geom_text(aes(label=node), size = 3) # use this line to get node labels
 tree_figure_clade_collapsed
 # collapse clades
