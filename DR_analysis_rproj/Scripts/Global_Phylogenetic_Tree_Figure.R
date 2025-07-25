@@ -18,14 +18,24 @@ source("Scripts/Global_Phylogenetic_Tree_Data_Formatting.R")
 # ---------- TREE FIGURE SETUP -------------------------------
 
 
-clade_colors <- c("#771155","#5c5c5c", "#AA4488", "#CC99BB", "#114477", 
-                  "#4477AA", "#77AADD", "#117777", "#44AAAA", "#77CCCC", 
-                  "#117744", "#44AA77", "#88CCAA", "#777711", "#AAAA44", 
-                  "#DDDD77", "#774411", "#AA7744", "#DDAA77", "#771122")
-names(clade_colors) <- c("20F", "20A", "20I (Alpha, V1)", "20B", "20D", 
-                         "20G", "20C", "20E (EU1)", "21J (Delta)", "20H (Beta, V2)",
-                         "21D (Eta)", "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
-                         "21I (Delta)", "21B (Kappa)", "19A", "21G (Lambda)", "21A (Delta)")
+# clade_colors <- c("#771155","#5c5c5c", "#AA4488", "#CC99BB", "#114477", 
+#                   "#4477AA", "#77AADD", "#117777", "#44AAAA", "#77CCCC", 
+#                   "#117744", "#44AA77", "#88CCAA", "#777711", "#AAAA44", 
+#                   "#DDDD77", "#774411", "#AA7744", "#DDAA77", "#771122")
+# names(clade_colors) <- c("20F", "20A", "20I (Alpha, V1)", "20B", "20D", 
+#                          "20G", "20C", "20E (EU1)", "21J (Delta)", "20H (Beta, V2)",
+#                          "21D (Eta)", "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
+#                          "21I (Delta)", "21B (Kappa)", "19A", "21G (Lambda)", "21A (Delta)")
+
+clade_colors <- c("#0050dc", "#00b31d",  "#eed41f", "#ff7a00",  "#ea229d", 
+                  "#464746",  "#eb2f16", "#45b0cf",  "#8413b6", "#9aa65a",  
+                  "#d48bd3", "#e1a17b",  "#895437", "black", "#a9cfad", "white", "white", "white", "white", "white", "white") 
+
+names(clade_colors) <- c("20A", "20I (Alpha, V1)", "20B", 
+                         "20G", "20C", "20E (EU1)", "21J (Delta)",
+                         "21F (Iota)", "21C (Epsilon)", "20J (Gamma, V3)", "19B", 
+                         "19A", "21A (Delta)", 
+                         "20F", "20D","21I (Delta)", "21D (Eta)", "20H (Beta, V2)", "21B (Kappa)", "21G (Lambda)")
 
 options(ignore.negative.edge=TRUE)
 
@@ -57,6 +67,21 @@ tree_figure <- ggtree(tree, color = tree_branch_colors, size = 0.1) %<+%
   scale_fill_manual(values = clade_colors)+
   guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE))+
   theme(legend.position = "bottom")
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
+tree_figure
+
+# clusters: 
+# 5459 is gray (top)
+tree_figure_collapsed <- tree_figure %>%
+  ggtree::collapse(node = 5464) %>% # grey at top (NOT WORKING)
+  ggtree::collapse(node = 3390) %>% # pink at bottom
+  ggtree::collapse(node = 4672) %>%
+  ggtree::collapse(node = 3975) %>% # middle grey
+  ggtree::collapse(node = 5112) %>% # yellow
+  ggtree::collapse(node = 3503) %>% # light blue
+  ggtree::collapse(node = 4184) # blue
+tree_figure_collapsed
+# orange: 
 
 # --------------- LEGEND ------------
 # legend <- get_legend(tree_figure + 
