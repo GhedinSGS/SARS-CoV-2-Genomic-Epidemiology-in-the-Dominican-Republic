@@ -19,7 +19,7 @@ layout_1 <- cowplot::plot_grid(new_cases_plot, map_figure+theme(legend.position=
 layout_2 <- cowplot::plot_grid(layout_1, DR_Lineages_figure, ncol = 1, labels = c("", "C"), rel_heights = c(1, 1.4))
 layout_2
 
-ggsave("Figures/Figure_1_Layout.pdf", height = 11, width = 8, unit = "in")
+ggsave("Figures/Figure_1_Layout.pdf", height = 11, width = 9, unit = "in")
 
 
  
