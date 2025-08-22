@@ -50,7 +50,7 @@ collapsed_clade_point_size = 5
 text_label_size <- 4
 label_offset = 0.000003
 
-background_alpha = 0.7
+background_alpha = 0.8
 
 metadata <- metadata %>% 
   mutate(GL_yn_numeric = ifelse(GL_yn == "y", 1, 0)) %>% 
@@ -155,6 +155,31 @@ tree_figure_simplified <- tree_figure %>%
   geom_cladelab(node = 5135, label=paste0("(", length(getDescendants(tree, 5135)), ")", sep=""), fontsize=text_label_size, offset = label_offset)
   
 tree_figure_simplified
+
+########################################################
+### collapsed nodes with big trianges in their place
+########################################################
+tree_figure_collapsed <- tree_figure %>% 
+  ggtree::collapse(node = 5425, 'max', fill=clade_colors[["20I (Alpha, V1)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 4016, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4825, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 3390, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5067, 'max', fill=clade_colors[["20F"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4184, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 3507, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 3675, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 3663, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5085, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 5177, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4481, 'max', fill=clade_colors[["21D (Eta)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4397, 'max', fill=clade_colors[["20H (Beta, V2)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5353, 'max', fill=clade_colors[["20J (Gamma, V3)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 3612, 'max', fill=clade_colors[["21C (Epsilon)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5030, 'max', fill=clade_colors[["20D"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4827, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5135, 'max', fill=clade_colors[["20B"]], alpha=background_alpha)
+tree_figure_collapsed
+
 # clusters: 
 # 5459 is gray (top)
 # tree_figure_collapsed <- tree_figure %>%
@@ -198,7 +223,7 @@ tree_figure_simplified
 #                        theme(legend.position = "bottom")+
 #                        guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE)))
 
-legend = cowplot::get_plot_component(tree_figure, 'guide-box-bottom', return_all = TRUE)
+legend = cowplot::get_plot_component(tree_figure_collapsed, 'guide-box-bottom', return_all = TRUE)
 
 # -------------- make plot together ---------------
 plot_layout <- plot_grid(bargraph_figure + theme(legend.position = "none"), 
@@ -207,9 +232,9 @@ plot_layout <- plot_grid(bargraph_figure + theme(legend.position = "none"),
                   rel_heights = c(3,1))
 
 plot_layout <- plot_grid(plot_layout, 
-                         tree_figure_simplified + theme(legend.position = "none"),
+                         tree_figure_collapsed + theme(legend.position = "none"),
                          nrow = 1,
                          rel_widths = c(2,2),
                          labels = c("A", "B"))
 plot_layout
-ggsave("Figures/global_tree_layout_2.1.jpg", plot_layout, height = 8.5, width = 11, unit = "in")
+ggsave("Figures/global_tree_layout_3.1.jpg", plot_layout, height = 8.5, width = 11, unit = "in")

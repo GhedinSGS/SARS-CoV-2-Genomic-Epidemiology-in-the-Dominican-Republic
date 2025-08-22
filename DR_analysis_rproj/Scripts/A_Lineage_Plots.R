@@ -109,8 +109,29 @@ tree_figure_clade_collapsed <- tree_figure_clade %>%
 tree_figure_clade_collapsed
 # collapse clades
 
+##############################################################################################
+### updated version with full sized triangles ###
+##############################################################################################
 
-tree_figure_clade
+tree_figure_collapsed_triangles <- tree_figure_clade %>%
+  ggtree::collapse(node = 1543, 'max', fill=region_colors[["North America"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 962, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 953, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1500, 'max', fill=region_colors[["Europe"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1402, 'max', fill=region_colors[["Europe"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 929, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1518, 'max', fill=region_colors[["Europe"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1544, 'max', fill=region_colors[["North America"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1320, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1393, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1061, 'max', fill=region_colors[["Caribbean"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 941, 'max', fill=region_colors[["North America"]], alpha=0.5) %>% 
+  ggtree::collapse(node = 1308, 'max', fill=region_colors[["North America"]], alpha=0.5) %>%
+  ggtree::collapse(node = 1665, 'max', fill=region_colors[["North America"]], alpha=0.5)
+# geom_text(aes(label=node), size = 3) # use this line to get node labels
+tree_figure_collapsed_triangles
+
+
 
 # tree subset #1 (C)
 A2.5_subtree <- tree_subset(tree, node = getParent(tree, A2.5_node_number), levels_back=3)
@@ -172,14 +193,14 @@ legend = cowplot::get_plot_component(tree_figure, 'guide-box-top', return_all = 
 subtree_layout <- cowplot::plot_grid(subtree_2_Collapsed+theme(legend.position="none"), 
                                      subtree_1_Collapsed + theme(legend.position="none"), 
                                      ncol = 1, labels = c("B", "C"), rel_heights = c(1, 1.75))
-trees_layout <- cowplot::plot_grid(tree_figure_clade_collapsed + theme(legend.position = "none"), 
+trees_layout <- cowplot::plot_grid(tree_figure_collapsed_triangles + theme(legend.position = "none"), 
                                    subtree_layout, 
                                    nrow = 1, rel_widths = c(1,2.5), 
                                    labels = c("A", ""))
 
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
 final_layout
-ggsave(filename = "Figures/A_lineage_v3.svg", final_layout, height = 8.5, width = 13, units = "in")
+ggsave(filename = "Figures/A_lineage_v4.svg", final_layout, height = 8.5, width = 13, units = "in")
 
 # try to make a piechart version of the tree: 
 # 
