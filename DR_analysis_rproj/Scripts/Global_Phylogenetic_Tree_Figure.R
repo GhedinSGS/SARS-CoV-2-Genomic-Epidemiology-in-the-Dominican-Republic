@@ -237,4 +237,4 @@ plot_layout <- plot_grid(plot_layout,
                          rel_widths = c(2,2),
                          labels = c("A", "B"))
 plot_layout
-ggsave("Figures/global_tree_layout_3.1.jpg", plot_layout, height = 8.5, width = 11, unit = "in")
+ggsave("Figures/FIG2_global_tree_layout_3.1.svg", plot_layout, height = 8.5, width = 11, unit = "in")
