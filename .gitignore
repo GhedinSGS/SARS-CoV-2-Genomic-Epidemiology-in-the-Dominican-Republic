@@ -21,3 +21,4 @@ DR_analysis_rproj/.DS_Store
 DR_analysis_rproj/Data_Reanalysis/.DS_Store
 DR_analysis_rproj/Data_Reanalysis/ncov_results/.DS_Store
 Data/20230328_Nextstrain_sequences.fasta
+tools/
