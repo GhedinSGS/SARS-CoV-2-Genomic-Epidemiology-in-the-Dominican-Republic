@@ -20,7 +20,7 @@ library(ape)
 tree <- treeio::read.newick("Data_Reanalysis/ncov_results/global_tree/tree.nwk")
 # metadata
 metadata_raw <- read_tsv("Data_Reanalysis/ncov_results/global_tree/metadata_with_nextclade_qc.tsv")
-
+# metadata_subsampled <- read_tsv("Data_Reanalysis/ncov_results/global_tree/20241213_DR_GlobalBackgroundTree_subsampled_metadata.tsv")
 # caribbean countries
 caribbean_countries <- c(
   # Independent Nations
