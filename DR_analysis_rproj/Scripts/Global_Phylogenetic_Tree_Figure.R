@@ -94,129 +94,50 @@ tree_figure <- ggtree(tree, color = tree_branch_colors, size = 0.1) %<+%
   scale_fill_manual(values = clade_colors)+
   guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE))+
   theme(legend.position = "bottom")
-  # geom_text(aes(label=node), size = 3)+ # use this line to get node labels
+  # geom_text(aes(label=node), size = 3) # use this line to get node labels
   # guides(fill = guide_legend(override.aes = list(alpha = .5))) # Sets legend symbols to opaque
 tree_figure
 
-tree_figure_simplified <- tree_figure %>% 
-  ggtree::collapse(node = 5425) %>% 
-  ggtree::collapse(node = 4016) %>% 
-  ggtree::collapse(node = 4825) %>% 
-  ggtree::collapse(node = 3390) %>% 
-  ggtree::collapse(node = 5067) %>% 
-  ggtree::collapse(node = 4184) %>% 
-  ggtree::collapse(node = 3507) %>% 
-  ggtree::collapse(node = 3675) %>% 
-  ggtree::collapse(node = 3663) %>% 
-  ggtree::collapse(node = 5085) %>%
-  ggtree::collapse(node = 5177) %>% 
-  ggtree::collapse(node = 4481) %>% 
-  ggtree::collapse(node = 4397) %>% 
-  ggtree::collapse(node = 5353) %>% 
-  ggtree::collapse(node = 3612) %>% 
-  ggtree::collapse(node = 5030) %>% 
-  ggtree::collapse(node = 4827) %>% 
-  ggtree::collapse(node = 5135) +
-  geom_point2(aes(subset=(node==5425)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20I (Alpha, V1)"]])+
-  geom_cladelab(node = 5425, label=paste0("(", length(getDescendants(tree, 5425)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4016)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20E (EU1)"]])+
-  geom_cladelab(node = 4016, label=paste0("(", length(getDescendants(tree, 4016)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4825)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20G"]])+
-  geom_cladelab(node = 4825, label=paste0("(", length(getDescendants(tree, 4825)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==3390)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["19B"]])+
-  geom_cladelab(node = 3390, label=paste0("(", length(getDescendants(tree, 3390)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5067)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20F"]])+
-  geom_cladelab(node = 5067, label=paste0("(", length(getDescendants(tree, 5067)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4184)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20A"]])+
-  geom_cladelab(node = 4184, label=paste0("(", length(getDescendants(tree, 4184)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==3507)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20A"]])+
-  geom_cladelab(node = 3507, label=paste0("(", length(getDescendants(tree, 3507)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==3675)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20A"]])+
-  geom_cladelab(node = 3675, label=paste0("(", length(getDescendants(tree, 3675)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==3663)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20A"]])+
-  geom_cladelab(node = 3663, label=paste0("(", length(getDescendants(tree, 3663)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5085)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20B"]])+
-  geom_cladelab(node = 5085, label=paste0("(", length(getDescendants(tree, 5085)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5177)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20B"]])+
-  geom_cladelab(node = 5177, label=paste0("(", length(getDescendants(tree, 5177)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4481)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["21D (Eta)"]])+
-  geom_cladelab(node = 4481, label=paste0("(", length(getDescendants(tree, 4481)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4397)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20H (Beta, V2)"]])+
-  geom_cladelab(node = 4397, label=paste0("(", length(getDescendants(tree, 4397)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5353)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20J (Gamma, V3)"]])+
-  geom_cladelab(node = 5353, label=paste0("(", length(getDescendants(tree, 5353)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==3612)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["21C (Epsilon)"]])+
-  geom_cladelab(node = 3612, label=paste0("(", length(getDescendants(tree, 3612)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5030)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20D"]])+
-  geom_cladelab(node = 5030, label=paste0("(", length(getDescendants(tree, 5030)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==4827)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20G"]])+
-  geom_cladelab(node = 4827, label=paste0("(", length(getDescendants(tree, 4827)), ")", sep=""), fontsize=text_label_size, offset = label_offset)+
-  geom_point2(aes(subset=(node==5135)), shape=17, size=collapsed_clade_point_size, alpha = 1, color=clade_colors[["20B"]])+
-  geom_cladelab(node = 5135, label=paste0("(", length(getDescendants(tree, 5135)), ")", sep=""), fontsize=text_label_size, offset = label_offset)
-  
-tree_figure_simplified
 
 ########################################################
 ### collapsed nodes with big trianges in their place
 ########################################################
 tree_figure_collapsed <- tree_figure %>% 
-  ggtree::collapse(node = 5425, 'max', fill=clade_colors[["20I (Alpha, V1)"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 4016, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4825, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 3390, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5067, 'max', fill=clade_colors[["20F"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4184, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 3507, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 3675, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 3663, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5085, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 5177, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4481, 'max', fill=clade_colors[["21D (Eta)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4397, 'max', fill=clade_colors[["20H (Beta, V2)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5353, 'max', fill=clade_colors[["20J (Gamma, V3)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 3612, 'max', fill=clade_colors[["21C (Epsilon)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5030, 'max', fill=clade_colors[["20D"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4827, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5135, 'max', fill=clade_colors[["20B"]], alpha=background_alpha)
+  ggtree::collapse(node = 7729, 'max', fill=clade_colors[["20I (Alpha, V1)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 7554, 'max', fill=clade_colors[["20J (Gamma, V3)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 6070, 'max', fill=clade_colors[["20H (Beta, V2)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 7025, 'max', fill=clade_colors[["20F"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5566, 'max', fill=clade_colors[["21I (Delta)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4474, 'max', fill=clade_colors[["19A"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 5719, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 5901, 'max', fill=clade_colors[["21C (Epsilon)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 7547, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 6815, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 6764, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 7014, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 7011, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4630, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 4528, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 4715, 'max', fill=clade_colors[["21D (Eta)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4754, 'max', fill=clade_colors[["21J (Delta)"]], alpha=background_alpha)  %>% 
+  ggtree::collapse(node = 6557, 'max', fill=clade_colors[["20D"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 7538, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 7405, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5849, 'max', fill=clade_colors[["20C"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5848, 'max', fill=clade_colors[["20C"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 5329, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5113, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 5100, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4697, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4699, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 4482, 'max', fill=clade_colors[["19B"]], alpha=background_alpha)
+  
+
+
 tree_figure_collapsed
 
-# clusters: 
-# 5459 is gray (top)
-# tree_figure_collapsed <- tree_figure %>%
-#   ggtree::collapse(node = 3390) %>% # pink at bottom
-#   ggtree::collapse(node = 4672) %>%
-#   ggtree::collapse(node = 3975) %>% # middle grey
-#   ggtree::collapse(node = 5112) %>% # yellow
-#   ggtree::collapse(node = 5256) %>% # yellow
-#   ggtree::collapse(node = 5085) %>% # yellow
-#   ggtree::collapse(node = 5177) %>% # yellow
-#   ggtree::collapse(node = 5055) %>% # yellow
-#   ggtree::collapse(node = 3503) %>% # light blue
-#   ggtree::collapse(node = 4184) %>%  # blue
-#   ggtree::collapse(node = 3507) %>%  # blue
-#   ggtree::collapse(node = 3875) %>%  # blue
-#   ggtree::collapse(node = 3662) %>%  # blue
-#   ggtree::collapse(node = 3874) %>%  # blue
-#   ggtree::collapse(node = 4515) %>%  # pink
-#   ggtree::collapse(node = 4467) %>%  # pink
-#   ggtree::collapse(node = 4389) %>%  # pink
-#   ggtree::collapse(node = 4353) %>%  # pink
-#   ggtree::collapse(node = 4344) %>%  # pink
-#   ggtree::collapse(node = 3588) %>%  # grey
-#   ggtree::collapse(node = 3924) %>%  # grey
-#   ggtree::collapse(node = 5067) %>%  # grey
-#   ggtree::collapse(node = 4481) %>%  # grey
-#   ggtree::collapse(node = 5353) %>%  # grey
-#   ggtree::collapse(node = 4397) %>%  # grey
-#   ggtree::collapse(node = 3847) %>%  # grey
-#   ggtree::collapse(node = 3843) %>%  # grey
-#   ggtree::collapse(node = 5030)+ # green
-#   geom_point2(aes(subset=(node==3390)), shape=16, size=5, alpha = 0.5, color=region_colors[["20C"]])+
-#   geom_cladelab(node = 3390, label=length(getDescendants(A2.5_subtree, 3390)), fontsize=text_label_size, offset = 0.000006)
-# tree_figure_collapsed # use this line to get node labels
+# ggtree::collapse(node = NODE, 'max', fill=clade_colors[["COLOR"]], alpha=background_alpha)
 
-# ggsave("Figures/TMP_global_tree_fig.png", tree_figure_collapsed+geom_text(aes(label=node), size = 3), height = 22, width = 11, unit = "in")
-# orange: 
 
 # --------------- LEGEND ------------
 # legend <- get_legend(tree_figure + 
@@ -237,4 +158,4 @@ plot_layout <- plot_grid(plot_layout,
                          rel_widths = c(2,2),
                          labels = c("A", "B"))
 plot_layout
-ggsave("Figures/FIG2_global_tree_layout_3.1.svg", plot_layout, height = 8.5, width = 11, unit = "in")
+ggsave("Figures/FIG2_global_tree_layout_4.1.svg", plot_layout, height = 8.5, width = 16, unit = "in")
