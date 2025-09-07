@@ -158,4 +158,11 @@ plot_layout <- plot_grid(plot_layout,
                          rel_widths = c(2,2),
                          labels = c("A", "B"))
 plot_layout
-ggsave("Figures/FIG2_global_tree_layout_4.1.svg", plot_layout, height = 8.5, width = 16, unit = "in")
+# ggsave("Figures/FIG2_global_tree_layout_4.1.svg", plot_layout, height = 8.5, width = 16, unit = "in")
+
+# ----------------- supp table 3 ----------------------------- #
+supp_fig_3 <- metadata %>% 
+  group_by(region, country) %>% 
+  summarise(count = n())
+
+write.csv(supp_fig_3, "Figures/supp_figure_3.csv",  row.names=F)

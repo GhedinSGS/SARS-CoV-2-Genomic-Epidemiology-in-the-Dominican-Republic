@@ -1,0 +1,140 @@
+"region","country","count"
+"Africa","Angola",4
+"Africa","Benin",15
+"Africa","Botswana",1
+"Africa","Burkina Faso",3
+"Africa","Cameroon",3
+"Africa","Central African Republic",1
+"Africa","Cote d'Ivoire",11
+"Africa","Djibouti",8
+"Africa","Egypt",14
+"Africa","Equatorial Guinea",1
+"Africa","Ethiopia",2
+"Africa","Gabon",15
+"Africa","Gambia",9
+"Africa","Ghana",18
+"Africa","Guinea",2
+"Africa","Kenya",24
+"Africa","Lesotho",1
+"Africa","Libya",1
+"Africa","Madagascar",8
+"Africa","Malawi",2
+"Africa","Mali",1
+"Africa","Mauritius",2
+"Africa","Mayotte",23
+"Africa","Morocco",5
+"Africa","Mozambique",8
+"Africa","Namibia",2
+"Africa","Niger",3
+"Africa","Nigeria",18
+"Africa","Republic of the Congo",1
+"Africa","Reunion",31
+"Africa","Rwanda",14
+"Africa","Senegal",14
+"Africa","Sierra Leone",1
+"Africa","Somalia",1
+"Africa","South Africa",176
+"Africa","South Sudan",4
+"Africa","Sudan",1
+"Africa","Togo",2
+"Africa","Tunisia",7
+"Africa","Uganda",9
+"Africa","Zambia",10
+"Africa","Zimbabwe",10
+"Asia","Armenia",3
+"Asia","Bahrain",1
+"Asia","Bangladesh",5
+"Asia","China",2
+"Asia","Hong Kong",10
+"Asia","India",85
+"Asia","Indonesia",15
+"Asia","Iran",2
+"Asia","Iraq",1
+"Asia","Israel",44
+"Asia","Japan",247
+"Asia","Jordan",3
+"Asia","Kazakhstan",1
+"Asia","Lebanon",5
+"Asia","Malaysia",5
+"Asia","Pakistan",1
+"Asia","Philippines",18
+"Asia","Qatar",1
+"Asia","Saudi Arabia",1
+"Asia","Singapore",10
+"Asia","South Korea",18
+"Asia","Sri Lanka",2
+"Asia","Thailand",1
+"Asia","United Arab Emirates",7
+"Asia","Vietnam",2
+"Caribbean","Aruba",98
+"Caribbean","Belize",43
+"Caribbean","Bermuda",24
+"Caribbean","Bonaire",94
+"Caribbean","Cayman Islands",19
+"Caribbean","Costa Rica",170
+"Caribbean","Curacao",96
+"Caribbean","Dominican Republic",211
+"Caribbean","El Salvador",1
+"Caribbean","Guadeloupe",86
+"Caribbean","Guatemala",33
+"Caribbean","Haiti",14
+"Caribbean","Honduras",15
+"Caribbean","Jamaica",92
+"Caribbean","Martinique",18
+"Caribbean","Nicaragua",45
+"Caribbean","Panama",233
+"Caribbean","Puerto Rico",98
+"Caribbean","Sint Eustatius",4
+"Caribbean","Sint Maarten",89
+"Caribbean","The Bahamas",26
+"Caribbean","U.S. Virgin Islands",23
+"Europe","Austria",1
+"Europe","Belgium",13
+"Europe","Bulgaria",4
+"Europe","Croatia",2
+"Europe","Cyprus",1
+"Europe","Czech Republic",2
+"Europe","Denmark",54
+"Europe","Estonia",1
+"Europe","Finland",8
+"Europe","France",17
+"Europe","Germany",40
+"Europe","Greece",4
+"Europe","Iceland",3
+"Europe","Ireland",3
+"Europe","Italy",12
+"Europe","Latvia",7
+"Europe","Lithuania",3
+"Europe","Luxembourg",5
+"Europe","Netherlands",12
+"Europe","Norway",7
+"Europe","Poland",2
+"Europe","Portugal",5
+"Europe","Romania",4
+"Europe","Russia",4
+"Europe","Slovakia",1
+"Europe","Slovenia",6
+"Europe","Spain",12
+"Europe","Sweden",39
+"Europe","Switzerland",13
+"Europe","Turkey",2
+"Europe","United Kingdom",206
+"North America","Canada",64
+"North America","Mexico",8
+"North America","USA",414
+"Oceania","Australia",446
+"Oceania","French Polynesia",1
+"Oceania","New Zealand",14
+"Oceania","Northern Mariana Islands",4
+"Oceania","Papua New Guinea",27
+"South America","Argentina",25
+"South America","Bolivia",2
+"South America","Brazil",371
+"South America","Chile",21
+"South America","Colombia",4
+"South America","Ecuador",4
+"South America","French Guiana",5
+"South America","Paraguay",8
+"South America","Peru",39
+"South America","Suriname",6
+"South America","Uruguay",5
