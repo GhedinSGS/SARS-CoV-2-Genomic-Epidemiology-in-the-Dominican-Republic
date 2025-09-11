@@ -72,6 +72,15 @@ metadata <- metadata %>%
                                       Nextstrain_clade == "21G" ~ "21G (Lambda)",
                                       .default = Nextstrain_clade))
 
+# make list of samples to downsample
+set.seed(20250912)
+background_samples <- metadata %>% 
+  filter(GL_yn == "n") %>% 
+  pull(strain)
+
+background_to_drop <- sample(background_samples, length(background_samples) - 500, replace=F)
+
+
 # ------- Plot BARGRAPH OF LINEAGES ------------
 bargraph_figure <- ggplot(data = metadata %>% 
          group_by(region, Nextstrain_clade) %>% 
@@ -87,54 +96,35 @@ bargraph_figure <- ggplot(data = metadata %>%
 bargraph_figure
 # --------- PLOT TREE --------------------- 
  
-tree_figure <- ggtree(tree, color = tree_branch_colors, size = 0.1) %<+% 
+tree_figure <- ggtree(drop.tip(tree, background_to_drop), color = tree_branch_colors, size = 0.1) %<+% 
   metadata+
   geom_tippoint(aes(fill=Nextstrain_clade, alpha = GL_yn, stroke = GL_yn_numeric), shape=21, size=4)+
   scale_alpha_discrete(range = c(background_alpha, 0.95), name = "This Study")+
   scale_fill_manual(values = clade_colors)+
   guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE))+
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom")+
+  geom_treescale(0.00003, 530)
   # geom_text(aes(label=node), size = 3) # use this line to get node labels
   # guides(fill = guide_legend(override.aes = list(alpha = .5))) # Sets legend symbols to opaque
 tree_figure
-
 
 ########################################################
 ### collapsed nodes with big trianges in their place
 ########################################################
 tree_figure_collapsed <- tree_figure %>% 
-  ggtree::collapse(node = 7729, 'max', fill=clade_colors[["20I (Alpha, V1)"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 7554, 'max', fill=clade_colors[["20J (Gamma, V3)"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 6070, 'max', fill=clade_colors[["20H (Beta, V2)"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 7025, 'max', fill=clade_colors[["20F"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5566, 'max', fill=clade_colors[["21I (Delta)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4474, 'max', fill=clade_colors[["19A"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 5719, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 5901, 'max', fill=clade_colors[["21C (Epsilon)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 7547, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 6815, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 6764, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 7014, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 7011, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4630, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 4528, 'max', fill=clade_colors[["19B"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 4715, 'max', fill=clade_colors[["21D (Eta)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4754, 'max', fill=clade_colors[["21J (Delta)"]], alpha=background_alpha)  %>% 
-  ggtree::collapse(node = 6557, 'max', fill=clade_colors[["20D"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 7538, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 7405, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5849, 'max', fill=clade_colors[["20C"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5848, 'max', fill=clade_colors[["20C"]], alpha=background_alpha) %>%
-  ggtree::collapse(node = 5329, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5113, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 5100, 'max', fill=clade_colors[["20E (EU1)"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4697, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4699, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) %>% 
-  ggtree::collapse(node = 4482, 'max', fill=clade_colors[["19B"]], alpha=background_alpha)
+  ggtree::collapse(node = 999, 'max', fill=clade_colors[["20I (Alpha, V1)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 985, 'max', fill=clade_colors[["20J (Gamma, V3)"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 929, 'max', fill=clade_colors[["20F"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 612, 'max', fill=clade_colors[["19B"]], alpha=background_alpha)  %>% 
+  ggtree::collapse(node = 748, 'max', fill=clade_colors[["20G"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 910, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>% 
+  ggtree::collapse(node = 894, 'max', fill=clade_colors[["20B"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 813, 'max', fill=clade_colors[["20H (Beta, V2)"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 868, 'max', fill=clade_colors[["20D"]], alpha=background_alpha) %>%
+  ggtree::collapse(node = 685, 'max', fill=clade_colors[["20A"]], alpha=background_alpha) 
   
-
-
 tree_figure_collapsed
+
 
 # ggtree::collapse(node = NODE, 'max', fill=clade_colors[["COLOR"]], alpha=background_alpha)
 
@@ -158,7 +148,7 @@ plot_layout <- plot_grid(plot_layout,
                          rel_widths = c(2,2),
                          labels = c("A", "B"))
 plot_layout
-# ggsave("Figures/FIG2_global_tree_layout_4.1.svg", plot_layout, height = 8.5, width = 16, unit = "in")
+ggsave("Figures/FIG2_global_tree_layout_5.1.svg", plot_layout, height = 8.5, width = 16, unit = "in")
 
 # ----------------- supp table 2 ----------------------------- #
 supp_fig_2 <- metadata %>% 
