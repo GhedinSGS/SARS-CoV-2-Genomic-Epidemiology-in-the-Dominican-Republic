@@ -24,7 +24,7 @@ A2.5_node_number <- match("DominicanRepublic/SGS/20210215", tree$tip.label) # A2
 
 collapsed_clade_point_size <- 3
 options(ignore.negative.edge=TRUE)
-text_offset = 0.00001
+text_offset = 0.00009
 
 # random subsample of 500 
 set.seed(20250912)
@@ -64,10 +64,10 @@ tree_figure_clade <- sample_clade %>%
     scale_fill_manual(values = region_colors)+
     #highlight clade 1 with Dominican Republic Sample
     #geom_hilight(node = A2.5_node_number, fill="yellow", alpha = 0.25)+
-    # geom_cladelab(node = A2.5_node_number, label = "C", offset.text = text_offset)+
+    geom_cladelab(node = 829, label = "C", align=T)+
     #Highlight clade 2 with Dominican Republic Sample
     #geom_hilight(node = A2_node_number, fill="yellow", alpha = 0.25)+
-    # geom_cladelab(node = A2_node_number, label = "B", offset.text = text_offset)+
+    geom_cladelab(node = 946, label = "B", align=T)+
     # add legend
     theme(legend.position = "top")+
   # geom_text(aes(label=node), size = 3)+ # use this line to get node labels
