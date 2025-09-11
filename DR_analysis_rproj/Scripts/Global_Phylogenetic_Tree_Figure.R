@@ -92,7 +92,7 @@ bargraph_figure <- ggplot(data = metadata %>%
   scale_fill_manual(values = clade_colors)+
   xlab("Region") +
   ylab("Number of Sequences")+
-  theme(axis.text.x = element_text(angle = 30, hjust = 1) )
+  theme(axis.text.x = element_text(angle = 30, hjust = 1), legend.position = "bottom")
 bargraph_figure
 # --------- PLOT TREE --------------------- 
  
@@ -134,7 +134,7 @@ tree_figure_collapsed
 #                        theme(legend.position = "bottom")+
 #                        guides(fill = guide_legend(nrow = 5), stroke = guide_legend(nrow = 2, byrow=TRUE)))
 
-legend = cowplot::get_plot_component(tree_figure_collapsed, 'guide-box-bottom', return_all = TRUE)
+legend = cowplot::get_plot_component(bargraph_figure, 'guide-box-bottom', return_all = TRUE)
 
 # -------------- make plot together ---------------
 plot_layout <- plot_grid(bargraph_figure + theme(legend.position = "none"), 
