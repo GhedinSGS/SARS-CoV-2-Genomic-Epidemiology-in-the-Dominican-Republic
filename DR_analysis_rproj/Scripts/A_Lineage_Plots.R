@@ -216,7 +216,7 @@ trees_layout <- cowplot::plot_grid(tree_figure_collapsed_triangles + theme(legen
 
 final_layout <- cowplot::plot_grid(trees_layout, legend, nrow = 2, rel_heights = c(10, 1))
 final_layout
-ggsave(filename = "Figures/FIG5_A_lineage_v5.svg", final_layout, height = 8.5, width = 13, units = "in")
+ggsave(filename = "Figures/FIG5_A_lineage_v5.1.svg", final_layout, height = 8.5, width = 13, units = "in")
 
 # try to make a piechart version of the tree: 
 # 
